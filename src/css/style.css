@@ -559,8 +559,8 @@ body {
    ========================================== */
 .about-content {
     display: grid;
-    grid-template-columns: auto 1.5fr 1fr;
-    gap: var(--spacing-2xl);
+    grid-template-columns: 160px 1.5fr 1fr;
+    gap: var(--spacing-lg);
     align-items: start;
 }
 
@@ -571,8 +571,8 @@ body {
 }
 
 .photo-wrapper {
-    width: 180px;
-    height: 220px;
+    width: 150px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--border-color);
