@@ -514,8 +514,7 @@ body {
    SECTIONS
    ========================================== */
 .section {
-    padding: var(--spacing-2xl) 0;
-    min-height: 100vh;
+    padding: var(--spacing-lg) 0;
     display: flex;
     align-items: center;
 }
@@ -526,7 +525,7 @@ body {
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
 }
 
 .section-tag {
@@ -560,9 +559,34 @@ body {
    ========================================== */
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: auto 1.5fr 1fr;
     gap: var(--spacing-2xl);
     align-items: start;
+}
+
+.about-photo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.photo-wrapper {
+    width: 180px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    display: block;
+    transform: scale(1.18);
 }
 
 .about-text .lead {
@@ -784,6 +808,42 @@ body {
     gap: var(--spacing-lg);
 }
 
+.skills-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card--compact {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.skill-tag {
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.skill-card--compact:hover .skill-tag {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
 .skill-card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -864,7 +924,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
@@ -931,7 +991,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: 0;
 }
 
 .feature-item {
@@ -1093,9 +1153,54 @@ body {
     background: var(--gradient-primary);
 }
 
+.cert-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.cert-card-link .cert-card {
+    cursor: pointer;
+}
+
+.cert-card-link .cert-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
 .cert-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: var(--shadow-xl);
+}
+
+.cert-view-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1rem;
+    padding: 6px 14px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.cert-view-badge i {
+    font-size: 0.85rem;
+    animation: finger-bounce 1.2s infinite;
+}
+
+@keyframes finger-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.cert-card-link:hover .cert-view-badge {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
 .cert-badge {
@@ -1117,6 +1222,10 @@ body {
 
 .cert-badge.aws {
     background: linear-gradient(135deg, #ff9900 0%, #ffbb33 100%);
+}
+
+.cert-badge.anthropic {
+    background: linear-gradient(135deg, #cc785c 0%, #e8956d 100%);
 }
 
 .cert-card h3 {
@@ -1464,6 +1573,15 @@ body {
     .about-content,
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .about-photo {
+        justify-content: center;
+    }
+
+    .photo-wrapper {
+        width: 140px;
+        height: 170px;
     }
 
     .arch-flow {

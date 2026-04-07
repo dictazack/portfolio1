@@ -31,10 +31,10 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Accueil</a></li>
                 <li><a href="#about" class="nav-link">À propos</a></li>
-                <li><a href="#experience" class="nav-link">Expérience</a></li>
-                <li><a href="#skills" class="nav-link">Compétences</a></li>
                 <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#experience" class="nav-link">Expérience</a></li>
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -86,7 +86,7 @@
                             <span class="stat-label">Années d'expérience</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">3</span>
+                            <span class="stat-number">5</span>
                             <span class="stat-label">Certifications</span>
                         </div>
                         <div class="stat-item">
@@ -133,6 +133,11 @@
                 <h2 class="section-title">À propos de moi</h2>
             </div>
             <div class="about-content">
+                <div class="about-photo" data-aos="fade-right">
+                    <div class="photo-wrapper">
+                        <img src="assets/profile.jpg" alt="Zakaria Driouich" class="profile-photo" />
+                    </div>
+                </div>
                 <div class="about-text" data-aos="fade-right">
                     <p class="lead">
                         Actuellement <strong>Analyste Cloud chez Cegid</strong> depuis décembre 2025, 
@@ -217,6 +222,125 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture section section-alt">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Infrastructure</span>
+                <h2 class="section-title">Architecture CI/CD de ce Portfolio</h2>
+                <p class="section-description">
+                    Ce portfolio est déployé automatiquement via une pipeline CI/CD complète —
+                    de la création d'un tag Git jusqu'à la mise en production sur un VPS cloud avec Docker et Nginx.
+                </p>
+            </div>
+
+            <div class="architecture-content">
+
+                <!-- Pipeline Flow -->
+                <div class="architecture-diagram" data-aos="fade-up">
+                    <div class="arch-flow">
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="100">
+                            <div class="arch-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Push d'un tag <code>v1.x.x</code> déclenche la pipeline</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>trigger</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="200">
+                            <div class="arch-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3>GitHub Actions</h3>
+                            <p>Build de l'image Docker + push vers GHCR</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>SSH</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="300">
+                            <div class="arch-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <h3>Docker</h3>
+                            <p>Image Nginx:alpine buildée et versionnée</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>run</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="400">
+                            <div class="arch-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>VPS Cloud</h3>
+                            <p>Conteneur démarré via Docker Compose</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>serve</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="500">
+                            <div class="arch-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Nginx</h3>
+                            <p>Site servi en production sur port 80</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="architecture-features" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-tag"></i>
+                            <h4>Versioning par tags Git</h4>
+                            <p>Chaque release est taguée (v1.0.0, v1.1.0...) — rollback possible en 30 secondes</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fab fa-docker"></i>
+                            <h4>Containerisation Docker</h4>
+                            <p>Image Nginx Alpine légère (&lt;50MB), reproductible sur n'importe quel environnement</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-key"></i>
+                            <h4>Déploiement sécurisé SSH</h4>
+                            <p>Clé ED25519 stockée dans les GitHub Secrets — aucun mot de passe exposé</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-rotate-left"></i>
+                            <h4>Rollback instantané</h4>
+                            <p>Script de rollback intégré — retour à une version précédente en une commande</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart-pulse"></i>
+                            <h4>Health Checks</h4>
+                            <p>Docker surveille le conteneur et le redémarre automatiquement en cas de panne</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-gauge-high"></i>
+                            <h4>Nginx optimisé</h4>
+                            <p>Gzip, cache 30 jours sur assets, headers de sécurité, &lt;2s de chargement</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -340,348 +464,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Expertise technique</span>
-                <h2 class="section-title">Compétences & Technologies</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>Cloud Platform</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Microsoft Azure</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">AWS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Azure DevOps</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Infrastructure</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Windows Server</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Linux (RHEL)</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">VMware/Hyper-V</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Automatisation</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">PowerShell</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Bash Scripting</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skill-icon">
-                        <i class="fas fa-shield-halved"></i>
-                    </div>
-                    <h3>Sécurité</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Fortinet FortiGate</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">VPN & Network Security</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Active Directory</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="92"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Databases</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">SQL Server</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">T-SQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Always On AG</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="skill-icon">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <h3>DevOps Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Docker</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Git/GitHub</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">CI/CD Pipelines</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Architecture Section -->
-    <section id="architecture" class="architecture section section-alt">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Infrastructure</span>
-                <h2 class="section-title">Architecture CI/CD de ce Portfolio</h2>
-                <p class="section-description">
-                    Ce portfolio est déployé automatiquement via une pipeline CI/CD complète —
-                    de la création d'un tag Git jusqu'à la mise en production sur un VPS cloud avec Docker et Nginx.
-                </p>
-            </div>
-
-            <div class="architecture-content">
-
-                <!-- Pipeline Flow -->
-                <div class="architecture-diagram" data-aos="fade-up">
-                    <div class="arch-flow">
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="100">
-                            <div class="arch-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <h3>GitHub</h3>
-                            <p>Push d'un tag <code>v1.x.x</code> déclenche la pipeline</p>
-                        </div>
-
-                        <div class="arch-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                            <span>trigger</span>
-                        </div>
-
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="200">
-                            <div class="arch-icon">
-                                <i class="fas fa-play-circle"></i>
-                            </div>
-                            <h3>GitHub Actions</h3>
-                            <p>Build de l'image Docker + push vers GHCR</p>
-                        </div>
-
-                        <div class="arch-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                            <span>SSH</span>
-                        </div>
-
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="300">
-                            <div class="arch-icon">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <h3>Docker</h3>
-                            <p>Image Nginx:alpine buildée et versionnée</p>
-                        </div>
-
-                        <div class="arch-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                            <span>run</span>
-                        </div>
-
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="400">
-                            <div class="arch-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h3>VPS Cloud</h3>
-                            <p>Conteneur démarré via Docker Compose</p>
-                        </div>
-
-                        <div class="arch-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                            <span>serve</span>
-                        </div>
-
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="500">
-                            <div class="arch-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Nginx</h3>
-                            <p>Site servi en production sur port 80</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Features Grid -->
-                <div class="architecture-features" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <i class="fas fa-tag"></i>
-                            <h4>Versioning par tags Git</h4>
-                            <p>Chaque release est taguée (v1.0.0, v1.1.0...) — rollback possible en 30 secondes</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fab fa-docker"></i>
-                            <h4>Containerisation Docker</h4>
-                            <p>Image Nginx Alpine légère (&lt;50MB), reproductible sur n'importe quel environnement</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-key"></i>
-                            <h4>Déploiement sécurisé SSH</h4>
-                            <p>Clé ED25519 stockée dans les GitHub Secrets — aucun mot de passe exposé</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-rotate-left"></i>
-                            <h4>Rollback instantané</h4>
-                            <p>Script de rollback intégré — retour à une version précédente en une commande</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-heart-pulse"></i>
-                            <h4>Health Checks</h4>
-                            <p>Docker surveille le conteneur et le redémarre automatiquement en cas de panne</p>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-gauge-high"></i>
-                            <h4>Nginx optimisé</h4>
-                            <p>Gzip, cache 30 jours sur assets, headers de sécurité, &lt;2s de chargement</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="tech-stack-arch" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Stack technique</h3>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub Actions</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-server"></i>
-                            <span>VPS Linux</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-shield-halved"></i>
-                            <span>SSH ED25519</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Git Tags</span>
-                        </div>
-                        <div class="tech-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Nginx Alpine</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pipeline Code Snippet -->
-                <div class="arch-code-block" data-aos="fade-up" data-aos-delay="400">
-                    <div class="code-header">
-                        <span class="code-dot red"></span>
-                        <span class="code-dot yellow"></span>
-                        <span class="code-dot green"></span>
-                        <span class="code-title">.github/workflows/deploy.yml</span>
-                    </div>
-                    <pre class="code-body"><code><span class="code-comment"># Déclenché uniquement sur un tag vX.X.X</span>
-<span class="code-key">on:</span>
-  push:
-    tags: <span class="code-string">['v*.*.*']</span>
-
-<span class="code-key">jobs:</span>
-  build:   <span class="code-comment"># Build &amp; push image Docker → GHCR</span>
-  deploy:  <span class="code-comment"># SSH → VPS → docker compose up -d</span>
-           <span class="code-comment"># Garde les 5 dernières versions</span></code></pre>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Certifications Section -->
     <section id="certifications" class="certifications section">
         <div class="container">
@@ -689,8 +471,9 @@
                 <span class="section-tag">Qualifications</span>
                 <h2 class="section-title">Certifications & Formation</h2>
             </div>
-            
+
             <div class="cert-grid">
+                <a href="https://learn.microsoft.com/fr-fr/users/ZakariaDriouich-9805/credentials/65D8134B438FBF8D" target="_blank" rel="noopener noreferrer" class="cert-card-link">
                 <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
                     <div class="cert-badge">
                         <i class="fab fa-microsoft"></i>
@@ -699,8 +482,14 @@
                     <p class="cert-code">AZ-104</p>
                     <p class="cert-desc">Administration des solutions Azure</p>
                     <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
                 </div>
+                </a>
 
+                <a href="https://training.fortinet.com/mod/customcert/verify_certificate.php?contextid=257821&code=GVHufxNRcD&qrcode=1" target="_blank" rel="noopener noreferrer" class="cert-card-link">
                 <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="cert-badge fortinet">
                         <i class="fas fa-shield-halved"></i>
@@ -709,8 +498,14 @@
                     <p class="cert-code">NSE 4</p>
                     <p class="cert-desc">Fortinet Network Security</p>
                     <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
                 </div>
+                </a>
 
+                <a href="https://www.credly.com/badges/c616a42a-7d4a-476a-927b-c8d363215208/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-card-link">
                 <div class="cert-card" data-aos="flip-left" data-aos-delay="300">
                     <div class="cert-badge aws">
                         <i class="fab fa-aws"></i>
@@ -719,7 +514,44 @@
                     <p class="cert-code">CLF-C01</p>
                     <p class="cert-desc">Fondamentaux AWS Cloud</p>
                     <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
                 </div>
+                </a>
+
+                <a href="https://verify.skilljar.com/c/d36kta9nfsrg" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="cert-badge anthropic">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Claude 101</h3>
+                    <p class="cert-code">Anthropic Academy</p>
+                    <p class="cert-desc">Utilisation de Claude pour les tâches professionnelles</p>
+                    <span class="cert-year">2025</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="https://learn.microsoft.com/fr-fr/users/zakariadriouich-9805/credentials/bc734fe6f8287d1d" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="cert-badge">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft ADDS</h3>
+                    <p class="cert-code">Active Directory Domain Services</p>
+                    <p class="cert-desc">Administration et déploiement ADDS</p>
+                    <span class="cert-year">2025</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
             </div>
 
             <div class="education-section" data-aos="fade-up">
@@ -754,6 +586,52 @@
                             <p class="edu-school">ISGI</p>
                             <span class="edu-year">2015-2017</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Expertise technique</span>
+                <h2 class="section-title">Compétences & Technologies</h2>
+            </div>
+            <div class="skills-grid skills-grid--two">
+                <div class="skill-card skill-card--compact" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">VMware</span>
+                        <span class="skill-tag">Hyper-V</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skill-card skill-card--compact" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Sécurité & Automatisation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Fortinet</span>
+                        <span class="skill-tag">VPN</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Git</span>
                     </div>
                 </div>
             </div>
