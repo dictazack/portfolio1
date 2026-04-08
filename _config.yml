@@ -1,0 +1,49 @@
+# Jekyll Configuration for GitHub Pages
+
+# Site settings
+title: Zakaria Driouich - Portfolio
+description: Analyste Cloud, Ingénieur DevOps, Expert Azure & Cybersécurité
+author: Zakaria Driouich
+email: Zakaria.driouich@outlook.fr
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github/
+
+# Include files
+include:
+  - .htaccess
+  - _pages
+
+# Permalink structure
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO settings
+lang: fr_FR
+timezone: Africa/Casablanca
+
+# Social
+social:
+  name: Zakaria Driouich
+  links:
+    - https://www.linkedin.com/in/zakaria-driouich
+    - https://github.com/zakariadriouich
