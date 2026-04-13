@@ -30,10 +30,9 @@ function initializeTyped() {
     const typed = new Typed('#typed', {
         strings: [
             'Analyste Cloud',
-            'Ingénieur DevOps',
+            'Ingénieur Cloud',
             'Expert Azure & AWS',
-            'Administrateur Systèmes',
-            'Spécialiste Cybersécurité',
+            'Ingénieur Poste de Travail',
             'Automatisation & Scripting'
         ],
         typeSpeed: 50,
