@@ -970,6 +970,90 @@ body {
     color: var(--text-tertiary);
 }
 
+/* ── Monitoring wrapper (above Nginx step) ──────────────────────────────── */
+.arch-step-monitor-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.arch-step-inner {
+    flex: unset !important;
+    width: 100%;
+}
+
+.monitoring-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.monitoring-panel-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-tertiary);
+    margin-bottom: 0.6rem;
+}
+
+.monitoring-panel-badges {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.monitoring-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.73rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.monitoring-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.uptime-badge {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #22c55e;
+}
+
+.grafana-badge {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    color: #f97316;
+}
+
+.monitoring-ext-icon {
+    font-size: 0.58rem;
+    opacity: 0.65;
+}
+
+.monitoring-connector {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    opacity: 0.6;
+    line-height: 1;
+}
+
 .arch-arrow {
     display: flex;
     flex-direction: column;
@@ -1580,8 +1664,8 @@ body {
     }
 
     .photo-wrapper {
-        width: 140px;
-        height: 170px;
+        width: 90px;
+        height: 110px;
     }
 
     .arch-flow {

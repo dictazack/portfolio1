@@ -295,12 +295,37 @@
                             <span>serve</span>
                         </div>
 
-                        <div class="arch-step" data-aos="fade-right" data-aos-delay="500">
-                            <div class="arch-icon">
-                                <i class="fas fa-globe"></i>
+                        <div class="arch-step-monitor-wrapper" data-aos="fade-right" data-aos-delay="500">
+                            <!-- Monitoring tools -->
+                            <div class="monitoring-panel">
+                                <span class="monitoring-panel-label">
+                                    <i class="fas fa-eye"></i> Monitoring
+                                </span>
+                                <div class="monitoring-panel-badges">
+                                    <a href="http://84.247.128.192:3001/status/porfolio" target="_blank" rel="noopener noreferrer" class="monitoring-badge uptime-badge">
+                                        <i class="fas fa-heart-pulse"></i>
+                                        <span>Uptime Kuma</span>
+                                        <i class="fas fa-arrow-up-right-from-square monitoring-ext-icon"></i>
+                                    </a>
+                                    <a href="http://84.247.128.192:3000" target="_blank" rel="noopener noreferrer" class="monitoring-badge grafana-badge">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Grafana</span>
+                                        <i class="fas fa-arrow-up-right-from-square monitoring-ext-icon"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <h3>Nginx</h3>
-                            <p>Site servi en production sur port 80</p>
+                            <!-- Connector -->
+                            <div class="monitoring-connector">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <!-- Nginx step -->
+                            <div class="arch-step arch-step-inner">
+                                <div class="arch-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>Nginx</h3>
+                                <p>Site servi en production sur port 8080</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -690,6 +715,9 @@
                         </a>
                         <a href="mailto:Zakaria.driouich@outlook.fr" class="social-link">
                             <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="http://84.247.128.192:3001/status/porfolio" target="_blank" class="social-link" title="Status Page">
+                            <i class="fas fa-heart-pulse"></i>
                         </a>
                     </div>
                 </div>
