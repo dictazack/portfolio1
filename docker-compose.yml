@@ -94,11 +94,40 @@ services:
     networks:
       - monitoring
 
+  # ── Loki (agrégation des logs) ────────────────────────────────────────────
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    ports:
+      - "127.0.0.1:3100:3100"
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/local-config.yaml:ro
+      - loki-data:/loki
+    command: -config.file=/etc/loki/local-config.yaml
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  # ── Promtail (collecte des logs Docker) ───────────────────────────────────
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    volumes:
+      - ./promtail/promtail-config.yml:/etc/promtail/config.yml:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/config.yml
+    restart: unless-stopped
+    depends_on:
+      - loki
+    networks:
+      - monitoring
+
 # ── Volumes persistants ───────────────────────────────────────────────────
 volumes:
   uptime-kuma-data:
   prometheus-data:
   grafana-data:
+  loki-data:
 
 # ── Réseau interne ────────────────────────────────────────────────────────
 networks:
