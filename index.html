@@ -32,6 +32,7 @@
                 <li><a href="#home" class="nav-link active">Accueil</a></li>
                 <li><a href="#about" class="nav-link">À propos</a></li>
                 <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#monitoring" class="nav-link">Monitoring</a></li>
                 <li><a href="#experience" class="nav-link">Expérience</a></li>
                 <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#skills" class="nav-link">Compétences</a></li>
@@ -369,6 +370,106 @@
                             <h4>Nginx optimisé</h4>
                             <p>Gzip, cache 30 jours sur assets, headers de sécurité, &lt;2s de chargement</p>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitoring Section -->
+    <section id="monitoring" class="section section-alt">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Live</span>
+                <h2 class="section-title">Monitoring & Observabilité</h2>
+                <p class="section-description">Tableaux de bord en temps réel déployés sur mon infrastructure VPS</p>
+            </div>
+            <div class="monitoring-cards" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Card Uptime Kuma -->
+                <div class="monitor-card">
+                    <div class="monitor-card-header kuma">
+                        <i class="fas fa-heart-pulse"></i>
+                        <span>Uptime Kuma</span>
+                        <span class="monitor-badge live">● LIVE</span>
+                    </div>
+                    <div class="monitor-card-screenshot">
+                        <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" rel="noopener noreferrer">
+                            <img
+                                src="https://image.thum.io/get/width/800/crop/450/noanimate/https://kuma.drioui.ch/status/porfolio"
+                                alt="Uptime Kuma screenshot"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                            />
+                            <div class="monitor-screenshot-fallback" style="display:none;">
+                                <i class="fas fa-heart-pulse"></i>
+                                <span>Uptime Kuma</span>
+                            </div>
+                            <div class="monitor-card-overlay">
+                                <span><i class="fas fa-arrow-up-right-from-square"></i> Ouvrir le dashboard</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="monitor-card-footer">
+                        <span class="monitor-desc">Surveillance de la disponibilité des services 24/7</span>
+                        <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" rel="noopener noreferrer" class="monitor-link kuma-link">
+                            Voir en direct <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Grafana -->
+                <div class="monitor-card">
+                    <div class="monitor-card-header grafana">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Grafana</span>
+                        <span class="monitor-badge live">● LIVE</span>
+                    </div>
+                    <div class="monitor-card-screenshot">
+                        <a href="https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb" target="_blank" rel="noopener noreferrer">
+                            <img
+                                src="https://image.thum.io/get/width/800/crop/450/noanimate/https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb"
+                                alt="Grafana dashboard screenshot"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                            />
+                            <div class="monitor-screenshot-fallback" style="display:none;">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Grafana</span>
+                            </div>
+                            <div class="monitor-card-overlay">
+                                <span><i class="fas fa-arrow-up-right-from-square"></i> Ouvrir le dashboard</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="monitor-card-footer">
+                        <span class="monitor-desc">Métriques système, réseau et applicatives en temps réel</span>
+                        <a href="https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb" target="_blank" rel="noopener noreferrer" class="monitor-link grafana-link">
+                            Voir en direct <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Loki -->
+                <div class="monitor-card">
+                    <div class="monitor-card-header loki">
+                        <i class="fas fa-scroll"></i>
+                        <span>Loki</span>
+                        <span class="monitor-badge">Logs</span>
+                    </div>
+                    <div class="monitor-card-screenshot no-link">
+                        <div class="monitor-screenshot-fallback loki-fallback">
+                            <i class="fas fa-scroll"></i>
+                            <span>Agrégation de logs</span>
+                            <small>Intégré à Grafana</small>
+                        </div>
+                    </div>
+                    <div class="monitor-card-footer">
+                        <span class="monitor-desc">Centralisation et analyse des logs applicatifs via Grafana Loki</span>
+                        <span class="monitor-link loki-link">
+                            Intégré à Grafana <i class="fas fa-link"></i>
+                        </span>
                     </div>
                 </div>
 

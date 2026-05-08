@@ -29,7 +29,7 @@ function initializeAOS() {
 function initializeTyped() {
     const typed = new Typed('#typed', {
         strings: [
-            'Analyste Cloud',
+            'Analyste d\'exploitation cloud',
             'Ingénieur Cloud',
             'Expert Azure & AWS',
             'Ingénieur Poste de Travail',
