@@ -1,0 +1,12 @@
+.git
+.github
+docs
+scripts
+config
+*.md
+LISEZ-MOI-EN-PREMIER.txt
+_config.yml
+CNAME
+GUIDE_VISUEL.html
+LICENSE
+.dockerignore

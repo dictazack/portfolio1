@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Déploiement - Portfolio Zakaria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #0066ff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #0066ff;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .architecture {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 150px;
+            background: white;
+            border: 2px solid #0066ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .flow-step .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .flow-step h4 {
+            color: #0066ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .flow-step p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #0066ff;
+        }
+
+        .steps {
+            counter-reset: step-counter;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #0066ff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        .step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #0066ff;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .step h4 {
+            color: #0066ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .step code {
+            background: #1e293b;
+            color: #10b981;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #10b981;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .alert-success {
+            background: #d1e7dd;
+            border-left-color: #0f5132;
+        }
+
+        .alert-info {
+            background: #cff4fc;
+            border-left-color: #055160;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #0066ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-badge {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 768px) {
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Portfolio Zakaria Driouich</h1>
+            <p>Guide complet de déploiement CI/CD avec GitHub Actions</p>
+        </div>
+
+        <div class="content">
+            <!-- Introduction -->
+            <div class="section">
+                <h2>📋 Vue d'ensemble du projet</h2>
+                <p>
+                    Ce portfolio professionnel moderne est conçu pour être déployé automatiquement 
+                    via une pipeline CI/CD utilisant GitHub Actions et hébergé gratuitement sur GitHub Pages.
+                </p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">✨</div>
+                        <h4>Design Moderne</h4>
+                        <p>Glassmorphism & animations fluides</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🌓</div>
+                        <h4>Dark Mode</h4>
+                        <p>Thème clair/sombre automatique</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h4>Responsive</h4>
+                        <p>Mobile, Tablet, Desktop</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚡</div>
+                        <h4>Performance</h4>
+                        <p>Chargement ultra-rapide</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture CI/CD -->
+            <div class="section">
+                <h2>🏗️ Architecture CI/CD</h2>
+                
+                <div class="architecture">
+                    <h3>Flux de déploiement automatique</h3>
+                    <div class="flow">
+                        <div class="flow-step">
+                            <div class="icon">📁</div>
+                            <h4>GitHub Repository</h4>
+                            <p>Code source versionné</p>
+                        </div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">
+                            <div class="icon">🔄</div>
+                            <h4>GitHub Actions</h4>
+                            <p>Pipeline CI/CD</p>
+                        </div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">
+                            <div class="icon">✅</div>
+                            <h4>Build & Test</h4>
+                            <p>Validation</p>
+                        </div>
+
+                        <div class="arrow">→</div>
+
+                        <div class="flow-step">
+                            <div class="icon">🌐</div>
+                            <h4>GitHub Pages</h4>
+                            <p>Site en production</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>ℹ️ Info:</strong> Chaque modification (push) sur la branche main déclenche 
+                        automatiquement un nouveau déploiement en 1-2 minutes.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guide de déploiement -->
+            <div class="section">
+                <h2>📖 Guide de déploiement étape par étape</h2>
+
+                <div class="steps">
+                    <div class="step">
+                        <h4>Créer un repository GitHub</h4>
+                        <p>
+                            Allez sur <a href="https://github.com/new" target="_blank">github.com/new</a> 
+                            et créez un nouveau repository.
+                        </p>
+                        <ul>
+                            <li>Nom: <code>portfolio</code> ou <code>VOTRE_USERNAME.github.io</code></li>
+                            <li>Visibilité: <strong>Public</strong> (requis pour GitHub Pages gratuit)</li>
+                            <li>Ne pas initialiser avec README</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h4>Uploader les fichiers du portfolio</h4>
+                        <p><strong>Option A: Interface web (plus facile)</strong></p>
+                        <ul>
+                            <li>Dans votre repository, cliquer sur "uploading an existing file"</li>
+                            <li>Glisser-déposer TOUS les fichiers extraits du ZIP</li>
+                            <li>Commit changes</li>
+                        </ul>
+                        <p><strong>Option B: Ligne de commande Git</strong></p>
+                        <div class="code-block">cd portfolio-zakaria
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/VOTRE_USERNAME/portfolio.git
+git push -u origin main</div>
+                    </div>
+
+                    <div class="step">
+                        <h4>Activer GitHub Pages</h4>
+                        <ul>
+                            <li>Aller dans <strong>Settings</strong> de votre repository</li>
+                            <li>Menu de gauche: <strong>Pages</strong></li>
+                            <li>Source: Sélectionner <strong>GitHub Actions</strong></li>
+                            <li>Save</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h4>Vérifier le déploiement</h4>
+                        <ul>
+                            <li>Aller dans l'onglet <strong>Actions</strong></li>
+                            <li>Vous verrez un workflow en cours d'exécution</li>
+                            <li>Attendre le badge vert ✅ (1-2 minutes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h4>Accéder à votre portfolio en ligne</h4>
+                        <p>Votre site est maintenant accessible à l'URL:</p>
+                        <div class="code-block">https://VOTRE_USERNAME.github.io/portfolio/</div>
+                        <div class="alert alert-success">
+                            <strong>✅ Félicitations!</strong> Votre portfolio est en ligne et accessible 
+                            partout dans le monde!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personnalisation -->
+            <div class="section">
+                <h2>✏️ Personnalisation rapide</h2>
+
+                <h3>1. Informations personnelles</h3>
+                <p>Fichier: <code>index.html</code></p>
+                <ul>
+                    <li><strong>Ligne 55:</strong> Modifier votre nom</li>
+                    <li><strong>Ligne 344:</strong> Modifier votre email</li>
+                    <li><strong>Ligne 352:</strong> Modifier votre téléphone</li>
+                    <li><strong>Ligne 360+:</strong> Modifier vos liens sociaux</li>
+                </ul>
+
+                <h3>2. Couleurs du thème</h3>
+                <p>Fichier: <code>src/css/style.css</code> (lignes 4-10)</p>
+                <div class="code-block">:root {
+    --primary-color: #0066ff;      /* Votre couleur principale */
+    --secondary-color: #00d4ff;     /* Couleur secondaire */
+    --accent-color: #ff6b35;        /* Couleur d'accent */
+}</div>
+
+                <h3>3. Titres animés</h3>
+                <p>Fichier: <code>src/js/main.js</code> (lignes 22-30)</p>
+                <div class="code-block">strings: [
+    'Analyste Cloud',
+    'Ingénieur DevOps',
+    'Votre nouveau titre'  // Ajoutez vos titres
+]</div>
+
+                <h3>4. Ajouter votre CV</h3>
+                <ul>
+                    <li>Placer votre CV dans le dossier <code>assets/</code></li>
+                    <li>Nommer le fichier: <code>CV_Zakaria_Driouich.pdf</code></li>
+                    <li>Ou modifier le lien dans index.html (ligne 162)</li>
+                </ul>
+
+                <div class="alert">
+                    <strong>⚠️ Important:</strong> Après chaque modification, n'oubliez pas de commit 
+                    et push vos changements. Le site se mettra à jour automatiquement!
+                </div>
+            </div>
+
+            <!-- Technologies utilisées -->
+            <div class="section">
+                <h2>🛠️ Technologies utilisées</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript ES6+</span>
+                    <span class="tech-badge">GitHub Actions</span>
+                    <span class="tech-badge">GitHub Pages</span>
+                    <span class="tech-badge">AOS Library</span>
+                    <span class="tech-badge">Typed.js</span>
+                    <span class="tech-badge">Font Awesome</span>
+                    <span class="tech-badge">Google Fonts</span>
+                </div>
+            </div>
+
+            <!-- Dépannage -->
+            <div class="section">
+                <h2>🔧 Dépannage</h2>
+
+                <h3>Le site ne se charge pas</h3>
+                <ul>
+                    <li>Attendre 2-3 minutes après le premier déploiement</li>
+                    <li>Vérifier que GitHub Pages est bien activé (Settings > Pages)</li>
+                    <li>Vider le cache du navigateur (Ctrl + Shift + R)</li>
+                    <li>Vérifier l'URL exacte dans Settings > Pages</li>
+                </ul>
+
+                <h3>CSS ou JavaScript ne fonctionnent pas</h3>
+                <ul>
+                    <li>Vérifier que TOUS les fichiers ont été uploadés</li>
+                    <li>Ouvrir la console du navigateur (F12) pour voir les erreurs</li>
+                    <li>Vérifier que les chemins des fichiers sont corrects</li>
+                </ul>
+
+                <h3>Erreur dans GitHub Actions</h3>
+                <ul>
+                    <li>Aller dans Actions > Workflow échoué > Voir les logs</li>
+                    <li>Vérifier les permissions (Settings > Actions > Workflow permissions)</li>
+                    <li>S'assurer que le fichier .github/workflows/deploy.yml existe</li>
+                </ul>
+            </div>
+
+            <!-- Ressources -->
+            <div class="section">
+                <h2>📚 Ressources utiles</h2>
+                <ul>
+                    <li><a href="https://docs.github.com/en/pages" target="_blank">Documentation GitHub Pages</a></li>
+                    <li><a href="https://docs.github.com/en/actions" target="_blank">Documentation GitHub Actions</a></li>
+                    <li><a href="https://coolors.co" target="_blank">Coolors - Palettes de couleurs</a></li>
+                    <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a></li>
+                    <li><a href="https://fontawesome.com" target="_blank">Font Awesome Icons</a></li>
+                </ul>
+            </div>
+
+            <!-- Actions -->
+            <div class="section" style="text-align: center;">
+                <h2>🚀 Prêt à déployer?</h2>
+                <p style="margin-bottom: 2rem;">Suivez le guide ci-dessus et votre portfolio sera en ligne en quelques minutes!</p>
+                <a href="https://github.com/new" class="btn" target="_blank">Créer un repository GitHub</a>
+                <a href="QUICKSTART.md" class="btn btn-secondary">Guide rapide (QUICKSTART.md)</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Portfolio Zakaria Driouich</strong></p>
+            <p>Conçu avec ❤️ | Déployé via CI/CD | MIT License</p>
+            <p style="margin-top: 1rem; color: #6c757d;">
+                Email: Zakaria.driouich@outlook.fr | Tél: +212 701 000 097
+            </p>
+        </div>
+    </div>
+</body>
+</html>

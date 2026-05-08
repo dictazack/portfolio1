@@ -1,0 +1,15 @@
+# Secrets — NE JAMAIS VERSIONNER
+.env
+.env.*
+!.env.example
+
+# Grafana data (volumes locaux si montés)
+grafana/data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+*.swp

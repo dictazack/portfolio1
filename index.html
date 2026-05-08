@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zakaria Driouich - Ingénieur Cloud, Systèmes et Cybersécurité">
+    <meta name="author" content="Zakaria Driouich">
+    <meta name="keywords" content="Cloud Engineer, DevOps, Azure, Cybersécurité, Systèmes, Réseaux">
+    <title>Zakaria Driouich | Cloud Engineer & DevOps</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">ZD</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#experience" class="nav-link">Expérience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-greeting" data-aos="fade-down">Bonjour, je suis</span>
+                    <h1 class="hero-name" data-aos="fade-up" data-aos-delay="100">
+                        Zakaria <span class="gradient-text">Driouich</span>
+                    </h1>
+                    <div class="hero-titles" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="typing-text">
+                            <span id="typed"></span>
+                        </h2>
+                    </div>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                        Analyste Cloud passionné par l'optimisation des infrastructures, 
+                        l'automatisation et la transformation digitale. Spécialisé en Azure, 
+                        DevOps et Cybersécurité.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Me contacter</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#architecture" class="btn btn-secondary">
+                            <span>Voir mon architecture</span>
+                            <i class="fas fa-diagram-project"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Années d'expérience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Projets réalisés</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                    <div class="image-wrapper">
+                        <div class="floating-card card-1">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Azure</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="floating-card card-4">
+                            <i class="fas fa-shield-halved"></i>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Qui suis-je ?</span>
+                <h2 class="section-title">À propos de moi</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-photo" data-aos="fade-right">
+                    <div class="photo-wrapper">
+                        <img src="assets/profile.jpg" alt="Zakaria Driouich" class="profile-photo" />
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="lead">
+                        Avec <strong>9 ans d'expérience</strong> dans les domaines du Cloud, des systèmes
+                        et de la cybersécurité, j'ai forgé mon expertise au sein d'entreprises de renom —
+                        <strong>Intelcia Groupe</strong>, <strong>Cegid Groupe</strong> et <strong>Docaposte</strong> —
+                        en pilotant des projets complexes à fort impact.
+                    </p>
+                    <p>
+                        Actuellement <strong>Analyste Cloud chez Cegid</strong>, je m'épanouis à l'intersection
+                        de l'innovation technologique et des enjeux métier : concevoir des architectures cloud
+                        robustes, automatiser les opérations, et élever le niveau de sécurité des infrastructures
+                        critiques.
+                    </p>
+                    <p>
+                        Passionné par la transformation digitale, je maîtrise l'écosystème <strong>Azure & AWS</strong>,
+                        l'automatisation avancée (PowerShell, Python) et les pratiques DevOps modernes.
+                        Chaque projet est pour moi une opportunité de repousser les limites et de livrer
+                        une valeur durable.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Azure & Cloud Infrastructure</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Automatisation & Scripting (PowerShell, Python)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sécurité réseau (Fortinet, VPN)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Administration système (Windows/Linux)</span>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="assets/CV_Zakaria_Driouich.pdf" class="btn btn-outline" download>
+                            <i class="fas fa-download"></i>
+                            <span>Télécharger mon CV</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-skills" data-aos="fade-left">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">VMware</span>
+                            <span class="skill-tag">Hyper-V</span>
+                            <span class="skill-tag">VEAM Backup</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Automatisation & DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Bash</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-network-wired"></i> Réseau & Sécurité</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Fortinet FortiGate</span>
+                            <span class="skill-tag">VPN</span>
+                            <span class="skill-tag">VLAN</span>
+                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag">DNS/DHCP</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Systèmes</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Windows Server</span>
+                            <span class="skill-tag">Linux RHEL</span>
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Dell PowerEdge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture section section-alt">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Infrastructure</span>
+                <h2 class="section-title">Architecture CI/CD de ce Portfolio</h2>
+                <p class="section-description">
+                    Ce portfolio est déployé automatiquement via une pipeline CI/CD complète —
+                    de la création d'un tag Git jusqu'à la mise en production sur un VPS cloud avec Docker et Nginx.
+                </p>
+            </div>
+
+            <div class="architecture-content">
+
+                <!-- Pipeline Flow -->
+                <div class="architecture-diagram" data-aos="fade-up">
+                    <div class="arch-flow">
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="100">
+                            <div class="arch-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GitHub</h3>
+                            <p>Push d'un tag <code>v1.x.x</code> déclenche la pipeline</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>trigger</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="200">
+                            <div class="arch-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <h3>GitHub Actions</h3>
+                            <p>Build de l'image Docker + push vers GHCR</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>SSH</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="300">
+                            <div class="arch-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <h3>Docker</h3>
+                            <p>Image Nginx:alpine buildée et versionnée</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>run</span>
+                        </div>
+
+                        <div class="arch-step" data-aos="fade-right" data-aos-delay="400">
+                            <div class="arch-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>VPS Cloud</h3>
+                            <p>Conteneur démarré via Docker Compose</p>
+                        </div>
+
+                        <div class="arch-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>serve</span>
+                        </div>
+
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;flex:1;min-width:150px;">
+                            <!-- Monitoring panel -->
+                            <div style="border:1px solid rgba(99,102,241,0.35);border-radius:14px;padding:0.75rem 1rem;width:100%;text-align:center;box-shadow:0 4px 16px rgba(99,102,241,0.1);background:rgba(99,102,241,0.05);">
+                                <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6366f1;margin-bottom:0.6rem;">
+                                    <i class="fas fa-eye"></i> Monitoring
+                                </div>
+                                <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+                                    <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.7rem;border-radius:20px;font-size:0.73rem;font-weight:600;text-decoration:none;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#22c55e;">
+                                        <i class="fas fa-heart-pulse"></i>
+                                        <span>Uptime Kuma</span>
+                                        <i class="fas fa-arrow-up-right-from-square" style="font-size:0.58rem;opacity:0.65;"></i>
+                                    </a>
+                                    <a href="https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.7rem;border-radius:20px;font-size:0.73rem;font-weight:600;text-decoration:none;background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.4);color:#f97316;">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Grafana</span>
+                                        <i class="fas fa-arrow-up-right-from-square" style="font-size:0.58rem;opacity:0.65;"></i>
+                                    </a>
+                                    <span style="display:flex;align-items:center;gap:0.35rem;padding:0.35rem 0.7rem;border-radius:20px;font-size:0.73rem;font-weight:600;background:rgba(254,199,51,0.15);border:1px solid rgba(254,199,51,0.4);color:#fec733;">
+                                        <i class="fas fa-scroll"></i>
+                                        <span>Loki</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Connector -->
+                            <div style="font-size:0.75rem;color:#6366f1;opacity:0.6;">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <!-- Nginx step -->
+                            <div class="arch-step" style="width:100%;">
+                                <div class="arch-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>Nginx</h3>
+                                <p>Site servi en production sur port 8080</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="architecture-features" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-tag"></i>
+                            <h4>Versioning par tags Git</h4>
+                            <p>Chaque release est taguée (v1.0.0, v1.1.0...) — rollback possible en 30 secondes</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fab fa-docker"></i>
+                            <h4>Containerisation Docker</h4>
+                            <p>Image Nginx Alpine légère (&lt;50MB), reproductible sur n'importe quel environnement</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-key"></i>
+                            <h4>Déploiement sécurisé SSH</h4>
+                            <p>Clé ED25519 stockée dans les GitHub Secrets — aucun mot de passe exposé</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-rotate-left"></i>
+                            <h4>Rollback instantané</h4>
+                            <p>Script de rollback intégré — retour à une version précédente en une commande</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-heart-pulse"></i>
+                            <h4>Health Checks</h4>
+                            <p>Docker surveille le conteneur et le redémarre automatiquement en cas de panne</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-gauge-high"></i>
+                            <h4>Nginx optimisé</h4>
+                            <p>Gzip, cache 30 jours sur assets, headers de sécurité, &lt;2s de chargement</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section section-alt">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Mon parcours</span>
+                <h2 class="section-title">Expérience Professionnelle</h2>
+            </div>
+            <div class="timeline">
+                <!-- Current Job -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Analyste Cloud (Cloud Analyst)</h3>
+                                <h4><i class="fas fa-building"></i> Cegid</h4>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Déc 2025 - Présent
+                            </span>
+                        </div>
+                        <div class="timeline-description">
+                            <p>
+                                Diagnostic et résolution d'incidents applicatifs, supervision et monitoring
+                                des environnements cloud, automatisation et contribution aux pipelines CI/CD.
+                            </p>
+                            <ul class="experience-tasks">
+                                <li>Diagnostic et résolution d'incidents applicatifs (ARR, IIS, App Cegid)</li>
+                                <li>Administration des sauvegardes et bases SQL Server (jobs, restaurations, supervision)</li>
+                                <li>Traitement des incidents et SR N3 via ServiceNow</li>
+                                <li>Automatisation via scripts Bash / PowerShell et développement d'outils internes</li>
+                                <li>Supervision et monitoring via Centreon, Splunk, Dynatrace</li>
+                                <li>Contribution aux pipelines CI/CD (Docker, GitHub Actions, Azure DevOps)</li>
+                                <li>Coordination transverse (Dev, Infra, Sécurité, Retail) et documentation technique</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Azure</span>
+                                <span class="tech-badge">SQL Server</span>
+                                <span class="tech-badge">PowerShell</span>
+                                <span class="tech-badge">Bash</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">GitHub Actions</span>
+                                <span class="tech-badge">ServiceNow</span>
+                                <span class="tech-badge">Splunk</span>
+                                <span class="tech-badge">Dynatrace</span>
+                                <span class="tech-badge">Centreon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Job -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Administrateur Système, Réseau et Sécurité</h3>
+                                <h4><i class="fas fa-building"></i> Intelcia Groupe</h4>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Déc 2021 - Nov 2025
+                            </span>
+                        </div>
+                        <div class="timeline-description">
+                            <p>
+                                Administration complète des infrastructures système, réseau et sécurité. 
+                                Gestion de projets de migration et déploiement d'infrastructures.
+                            </p>
+                            <ul class="experience-tasks">
+                                <li>Administration serveurs physiques/virtuels (Windows/Linux/VMware)</li>
+                                <li>Automatisation via PowerShell et Python pour optimiser les workflows</li>
+                                <li>Gestion Active Directory et politiques de sécurité</li>
+                                <li>Configuration réseau (switches, routeurs, pare-feux Fortinet)</li>
+                                <li>Administration Azure et gestion environnements cloud</li>
+                                <li>Déploiement mission Rabat : 2 serveurs Dell PowerEdge, VMs (AD/DNS/DHCP), switches, NAS Synology</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Windows Server</span>
+                                <span class="tech-badge">Linux</span>
+                                <span class="tech-badge">VMware</span>
+                                <span class="tech-badge">Fortinet</span>
+                                <span class="tech-badge">Azure</span>
+                                <span class="tech-badge">PowerShell</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Job -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Technicien IT N2</h3>
+                                <h4><i class="fas fa-building"></i> Intelcia Groupe</h4>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Juil 2019 - Déc 2021
+                            </span>
+                        </div>
+                        <div class="timeline-description">
+                            <p>
+                                Support utilisateurs niveau 2 et administration des postes de travail et Active Directory.
+                            </p>
+                            <ul class="experience-tasks">
+                                <li>Support utilisateurs N2 — prise en charge des escalades depuis le N1</li>
+                                <li>Administration des postes Windows et gestion des objets Active Directory (utilisateurs, groupes, GPO)</li>
+                                <li>Gestion et suivi des tickets via ITSM (Jira, GLPI) — respect des SLA</li>
+                                <li>Gestion du parc et stock informatique (inventaire, renouvellement)</li>
+                                <li>Rédaction de procédures et documentation technique</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Active Directory</span>
+                                <span class="tech-badge">Windows</span>
+                                <span class="tech-badge">Jira</span>
+                                <span class="tech-badge">GLPI</span>
+                                <span class="tech-badge">Support N2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fourth Job -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Technicien IT</h3>
+                                <h4><i class="fas fa-building"></i> Docaposte</h4>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Sep 2017 - Juil 2019
+                            </span>
+                        </div>
+                        <div class="timeline-description">
+                            <p>
+                                Support technique niveau 1 et gestion des postes de travail Windows.
+                            </p>
+                            <ul class="experience-tasks">
+                                <li>Diagnostic et résolution des pannes matérielles et logicielles</li>
+                                <li>Installation et configuration des postes Windows (masterisation, déploiement logiciel)</li>
+                                <li>Création et gestion des comptes utilisateurs dans Active Directory</li>
+                                <li>Support utilisateurs N1 — qualification et escalade vers N2</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Support N1</span>
+                                <span class="tech-badge">Windows</span>
+                                <span class="tech-badge">Active Directory</span>
+                                <span class="tech-badge">Hardware</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Qualifications</span>
+                <h2 class="section-title">Certifications & Formation</h2>
+            </div>
+
+            <div class="cert-grid">
+                <a href="https://learn.microsoft.com/fr-fr/users/ZakariaDriouich-9805/credentials/65D8134B438FBF8D" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="cert-badge">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Azure Administrator</h3>
+                    <p class="cert-code">AZ-104</p>
+                    <p class="cert-desc">Administration des solutions Azure</p>
+                    <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="https://training.fortinet.com/mod/customcert/verify_certificate.php?contextid=257821&code=GVHufxNRcD&qrcode=1" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="cert-badge fortinet">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Network Security Professional</h3>
+                    <p class="cert-code">NSE 4</p>
+                    <p class="cert-desc">Fortinet Network Security</p>
+                    <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="https://www.credly.com/badges/c616a42a-7d4a-476a-927b-c8d363215208/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="cert-badge aws">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p class="cert-code">CLF-C01</p>
+                    <p class="cert-desc">Fondamentaux AWS Cloud</p>
+                    <span class="cert-year">2024</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="https://verify.skilljar.com/c/d36kta9nfsrg" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="cert-badge anthropic">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Claude 101</h3>
+                    <p class="cert-code">Anthropic Academy</p>
+                    <p class="cert-desc">Utilisation de Claude pour les tâches professionnelles</p>
+                    <span class="cert-year">2025</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+
+                <a href="https://learn.microsoft.com/fr-fr/users/zakariadriouich-9805/credentials/bc734fe6f8287d1d" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="cert-badge">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft ADDS</h3>
+                    <p class="cert-code">Active Directory Domain Services</p>
+                    <p class="cert-desc">Administration et déploiement ADDS</p>
+                    <span class="cert-year">2025</span>
+                    <div class="cert-view-badge">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Voir le certificat</span>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="education-section" data-aos="fade-up">
+                <h3 class="subsection-title">Formation Académique</h3>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-content">
+                            <h4>Master Professionnel en Réseaux, Systèmes et Cybersécurité</h4>
+                            <p class="edu-school">INGI-SUP</p>
+                            <span class="edu-year">2022 - 2024</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-content">
+                            <h4>Licence Professionnelle en Systèmes, Réseaux et Sécurité</h4>
+                            <p class="edu-school">FST</p>
+                            <span class="edu-year">2021</span>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="edu-content">
+                            <h4>Diplôme Bac +2 en Systèmes Réseaux & Sécurité</h4>
+                            <p class="edu-school">ISGI</p>
+                            <span class="edu-year">2015-2017</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Expertise technique</span>
+                <h2 class="section-title">Compétences & Technologies</h2>
+            </div>
+            <div class="skills-grid skills-grid--two">
+                <div class="skill-card skill-card--compact" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">VMware</span>
+                        <span class="skill-tag">Hyper-V</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <div class="skill-card skill-card--compact" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Sécurité & Automatisation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Fortinet</span>
+                        <span class="skill-tag">VPN IPSec/SSL</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Centreon</span>
+                        <span class="skill-tag">Splunk</span>
+                        <span class="skill-tag">Dynatrace</span>
+                        <span class="skill-tag">ServiceNow</span>
+                        <span class="skill-tag">Veeam Backup</span>
+                        <span class="skill-tag">NAS Synology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section section-alt">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Restons connectés</span>
+                <h2 class="section-title">Contactez-moi</h2>
+                <p class="section-description">
+                    Discutons de vos projets cloud, infrastructure ou cybersécurité
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Localisation</h4>
+                            <p>Casablanca, Maroc</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:Zakaria.driouich@outlook.fr">Zakaria.driouich@outlook.fr</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <a href="tel:+212701000097">+212 701 000 097</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/zakaria-driouich" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/zakariadriouich" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:Zakaria.driouich@outlook.fr" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" class="social-link" title="Status Page">
+                            <i class="fas fa-heart-pulse"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Votre nom</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Votre email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Sujet</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Votre message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Envoyer le message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Zakaria Driouich. Tous droits réservés.</p>
+                    <p class="footer-tagline">Conçu avec <i class="fas fa-heart"></i> et déployé via CI/CD</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Accueil</a>
+                    <a href="#about">À propos</a>
+                    <a href="#experience">Expérience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="src/js/particles.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
