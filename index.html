@@ -303,39 +303,39 @@
                                 <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#6366f1;margin-bottom:0.75rem;text-align:center;">
                                     <i class="fas fa-eye"></i> Monitoring
                                 </div>
-                                <div style="display:flex;gap:0.5rem;justify-content:center;align-items:flex-start;flex-wrap:nowrap;">
+                                <div style="display:flex;gap:0.5rem;justify-content:center;align-items:flex-start;flex-wrap:nowrap;max-width:660px;margin:0 auto;">
                                     <!-- Kuma card -->
-                                    <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" rel="noopener noreferrer" class="arch-monitor-card">
+                                    <a href="https://kuma.drioui.ch/status/porfolio" target="_blank" rel="noopener noreferrer" class="arch-monitor-card" style="width:200px;min-width:200px;max-width:200px;flex-shrink:0;">
                                         <div class="arch-monitor-header kuma-h">
                                             <i class="fas fa-heart-pulse"></i>
                                             <span>Uptime Kuma</span>
                                             <span class="arch-monitor-live">● LIVE</span>
                                         </div>
-                                        <div class="arch-monitor-img">
-                                            <img src="assets/monitoring-kuma.png" alt="Uptime Kuma dashboard" />
+                                        <div class="arch-monitor-img" style="height:112px;overflow:hidden;">
+                                            <img src="assets/monitoring-kuma.png" alt="Uptime Kuma dashboard" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
                                             <div class="arch-monitor-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
                                         </div>
                                     </a>
                                     <!-- Grafana card -->
-                                    <a href="https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb" target="_blank" rel="noopener noreferrer" class="arch-monitor-card">
+                                    <a href="https://grafana.drioui.ch/public-dashboards/4b418987627b4f50aae1f8166579d5eb" target="_blank" rel="noopener noreferrer" class="arch-monitor-card" style="width:200px;min-width:200px;max-width:200px;flex-shrink:0;">
                                         <div class="arch-monitor-header grafana-h">
                                             <i class="fas fa-chart-line"></i>
                                             <span>Grafana</span>
                                             <span class="arch-monitor-live">● LIVE</span>
                                         </div>
-                                        <div class="arch-monitor-img">
-                                            <img src="assets/monitoring-grafana.png" alt="Grafana dashboard" />
+                                        <div class="arch-monitor-img" style="height:112px;overflow:hidden;">
+                                            <img src="assets/monitoring-grafana.png" alt="Grafana dashboard" style="width:100%;height:100%;object-fit:cover;object-position:top;" />
                                             <div class="arch-monitor-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
                                         </div>
                                     </a>
                                     <!-- Loki card -->
-                                    <div class="arch-monitor-card arch-monitor-card--static">
+                                    <div class="arch-monitor-card arch-monitor-card--static" style="width:200px;min-width:200px;max-width:200px;flex-shrink:0;">
                                         <div class="arch-monitor-header loki-h">
                                             <i class="fas fa-scroll"></i>
                                             <span>Loki</span>
                                             <span class="arch-monitor-live" style="color:#b45309;">● Logs</span>
                                         </div>
-                                        <div class="arch-monitor-img loki-logs-preview">
+                                        <div class="arch-monitor-img loki-logs-preview" style="height:112px;">
                                             <div class="loki-log-line"><span class="loki-ts">17:32:01</span><span class="loki-lvl info">INFO</span><span class="loki-msg">nginx: GET /index.html 200</span></div>
                                             <div class="loki-log-line"><span class="loki-ts">17:32:03</span><span class="loki-lvl info">INFO</span><span class="loki-msg">container: portfolio healthy</span></div>
                                             <div class="loki-log-line"><span class="loki-ts">17:32:05</span><span class="loki-lvl warn">WARN</span><span class="loki-msg">cadvisor: high cpu spike</span></div>
