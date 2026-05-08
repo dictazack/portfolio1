@@ -1779,7 +1779,142 @@ body {
 }
 
 /* ==========================================
-   MONITORING SECTION
+   ARCHITECTURE MONITORING CARDS
+   ========================================== */
+
+.arch-monitor-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    flex: 1;
+    min-width: 150px;
+    max-width: 210px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    background: var(--bg-primary);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.arch-monitor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.arch-monitor-header {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+.arch-monitor-header.kuma-h {
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.arch-monitor-header.grafana-h {
+    background: rgba(249, 115, 22, 0.12);
+    color: #ea580c;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.arch-monitor-live {
+    margin-left: auto;
+    font-size: 0.62rem;
+    font-weight: 700;
+    animation: pulse-badge 2s infinite;
+}
+
+.arch-monitor-card--static {
+    cursor: default;
+}
+
+.loki-logs-preview {
+    background: #0d1117;
+    padding: 0.5rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+    font-family: 'JetBrains Mono', monospace;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.loki-log-line {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    font-size: 0.48rem;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.loki-ts { color: #4a5568; flex-shrink: 0; }
+.loki-lvl { font-weight: 700; flex-shrink: 0; min-width: 2.2rem; }
+.loki-lvl.info { color: #22c55e; }
+.loki-lvl.warn { color: #f59e0b; }
+.loki-lvl.err  { color: #ef4444; }
+.loki-msg { color: #a0aec0; overflow: hidden; text-overflow: ellipsis; }
+
+.loki-log-cursor {
+    width: 5px;
+    height: 0.55rem;
+    background: #f59e0b;
+    margin-top: 0.15rem;
+    animation: blink-cursor 1s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.arch-monitor-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0d1117;
+}
+
+.arch-monitor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.arch-monitor-card:hover .arch-monitor-img img {
+    transform: scale(1.05);
+}
+
+.arch-monitor-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.arch-monitor-card:hover .arch-monitor-overlay {
+    opacity: 1;
+}
+
+/* ==========================================
+   MONITORING SECTION (unused — kept for reference)
    ========================================== */
 .monitoring-cards {
     display: grid;
