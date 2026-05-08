@@ -1788,9 +1788,8 @@ body {
     border-radius: 10px;
     overflow: hidden;
     text-decoration: none;
-    flex: 1;
-    min-width: 150px;
-    max-width: 210px;
+    flex: 0 0 auto;
+    width: 200px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
     background: var(--bg-primary);
@@ -1849,10 +1848,11 @@ body {
 .loki-log-line {
     display: flex;
     align-items: baseline;
-    gap: 0.35rem;
-    font-size: 0.48rem;
-    line-height: 1.4;
+    gap: 0.3rem;
+    font-size: 0.6rem;
+    line-height: 1.5;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .loki-ts { color: #4a5568; flex-shrink: 0; }
